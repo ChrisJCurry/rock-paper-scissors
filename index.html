@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Rock, Paper, Scissors!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <header>
+        <div class="container-fluid">
+            <div class="row justify-content-center text-center bg-dark text-warning py-4">
+                <div class="col-10">
+                    <h2>Rock, Paper, Scissors!</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="bg-dark">
+        <div class="container-fluid">
+            <div class="row justify-content-center text-center" id="play-btn-row">
+                <div class="col-12 text-warning pb-3">
+                    <button class="py-4 mt-3 btn btn-lg w-25 btn-warning text-dark font-weight-bold" onclick="startGame()">Play!</button>
+                </div>
+            </div>
+            <div class="hidden" id="game-content">
+                <div class="row bg-warning justify-content-center text-center py-5 px-4">
+                    <div class="col-12 py-3 oy-md-0 col-sm-4 col-md-2 pb-5">
+                        <button class="btn choice-btn btn-block btn-dark text-warning font-weight-bold" onclick="userChoice()" id="rock-btn">Rock</button>
+                    </div>
+                    <div class="col-12 py-3 py-md-0 col-sm-4 col-md-2 pb-5">
+                        <button class="btn choice-btn btn-block btn-dark text-warning font-weight-bold" onclick="userChoice()" id="paper-btn">Paper</button>
+                    </div>
+                    <div class="col-12 py-3 py-md-0 col-sm-4 col-md-2 pb-5">
+                        <button class="btn choice-btn btn-block btn-dark text-warning font-weight-bold" onclick="userChoice()" id="scissors-btn">Scissors</button>
+                    </div>
+                </div>
+                <div class="row text-center justify-content-center py-3">
+                    <div class="col-12 order-1 col-md-2 text-warning d-mobile-block">
+                        <h2>You:</h2>
+                        <h2> <span id="userPick"></span></h2>
+                    </div>
+                    <div class="col-12 order-3 order-md-2 col-md-2 text-warning d-mobile-block">
+                        <h2>Games Played:</h2>
+                        <h2 id="current-games-played">0</h2>
+                    </div>
+                    <div class="col-12 order-2 order-md-3 col-md-2 text-warning d-mobile-block">
+                        <h2>Computer:</h2>
+                        <h2><span id="compPick"></span></h2>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col text-warning">
+                        <h2>Results: </h2>
+                        <h2 id="results"></h2>
+                    </div>
+                </div>
+                <div class="row bg-warning justify-content-md-center justify-content-around text-center py-3 pr-md-5 pr-md-0">
+                    <div class="col-6 col-md-3 ">
+                        <h3>Wins with Rock</h3>
+                        <h4 id="rock-wins">-</h4>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h3>Wins with Paper </h3>
+                        <h4 id="paper-wins">-</h4>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h3>Wins with Scissors </h3>
+                        <h4 id="scissor-wins">-</h4>
+                    </div>
+                    <div class="col-12 col-md-6 ">
+                        <div class="row justify-content-md-center">
+                            <div class="col-4">
+                                <h2>Total Wins: </h2>
+                                <h2 id="total-wins">0</h2>
+                            </div>
+                            <div class="col-4">
+                                <h2>Total Losses: </h2>
+                                <h2 id="total-losses">0</h2>
+                            </div>
+                            <div class="col-4">
+                                <h2>Total Ties: </h2>
+                                <h2 id="total-ties">0</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <footer class="bg-dark">
+        <div class="container-fluid">
+            <div class="row pb-5 justify-content-center text-center hidden" id="stop-game-btn">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn choice-btn w-25 btn-warning text-dark" onclick="stopGame()">Stop Playing</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    <!-- Optional JavaScript -->
+    <script src="app.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

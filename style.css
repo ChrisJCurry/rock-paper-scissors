@@ -1,0 +1,42 @@
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main{flex-grow: 1;} 
+
+/* *{
+    border: 1px solid red;
+} */
+
+/*CSS Animation*/
+
+.choice-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    transition: width .75s, font-size .5s;
+}
+.choice-btn:hover {
+    width: 100%;
+    font-size: 2rem;
+}
+
+/*768 or bigger*/
+@media only screen and (min-width: 768px) {
+    /* makes position relative until 768px, then makes it absolute */
+    .d-mobile-block {
+        display: inline-block;
+    }
+}
+
+/*768 or smaller*/
+@media only screen and (max-width: 767px) {
+    /* makes position relative until 768px, then makes it absolute */
+    .d-mobile-block {
+        justify-content: space-between;
+        display:inline-flex;
+    }
+}
+
+.hidden {
+    display: none;
+}
